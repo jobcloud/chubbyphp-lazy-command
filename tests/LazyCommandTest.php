@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface as Output;
 
 /**
- * @covers Chubbyphp\Lazy\LazyCommand
+ * @covers \Chubbyphp\Lazy\LazyCommand
  */
 final class LazyCommandTest extends \PHPUnit_Framework_TestCase
 {
