@@ -8,7 +8,7 @@
 
 ## Description
 
-Allow to lazyload commands, middlewares.
+Allow to lazyload commands.
 
 ## Requirements
 
