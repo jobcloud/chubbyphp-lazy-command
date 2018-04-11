@@ -13,15 +13,15 @@ Allow to lazyload commands.
 ## Requirements
 
  * php: ~7.0
- * container-interop/container-interop: ~1.1
- * symfony/console: ~2.3|~3.0
+ * psr/container: ~1.0
+ * symfony/console: ~2.3|~3.0|~4.0
 
 ## Installation
 
 Through [Composer](http://getcomposer.org) as [chubbyphp/chubbyphp-lazy-command][1].
 
 ```sh
-composer require chubbyphp/chubbyphp-lazy-command "~1.0"
+composer require chubbyphp/chubbyphp-lazy-command "~1.1@dev"
 ```
 
 ## Usage
