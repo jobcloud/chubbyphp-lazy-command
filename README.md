@@ -21,7 +21,7 @@ Allow to lazyload commands.
 Through [Composer](http://getcomposer.org) as [chubbyphp/chubbyphp-lazy-command][1].
 
 ```sh
-composer require chubbyphp/chubbyphp-lazy-command "~1.1@dev"
+composer require chubbyphp/chubbyphp-lazy-command "~1.1"
 ```
 
 ## Usage
