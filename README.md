@@ -23,21 +23,52 @@ Allow to lazyload commands.
 Through [Composer](http://getcomposer.org) as [chubbyphp/chubbyphp-lazy-command][1].
 
 ```sh
-composer require chubbyphp/chubbyphp-lazy-command "~1.1"
+composer require chubbyphp/chubbyphp-lazy-command "~1.2"
 ```
 
 ## Usage
+
+### For callables
 
 ```php
 <?php
 
 use Chubbyphp\Lazy\LazyCommand;
-use Symfony\Component\Console\Input\InputInterface as Input;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Output\OutputInterface as Output;
+use Symfony\Component\Console\Output\OutputInterface;
 
-$container['service'] = function (Input $input, Output $output) {
-    // run some lazy logic
+$container['service'] = function () {
+    return function (InputInterface $input, OutputInterface $output) {
+        // run some lazy logic
+    };
+};
+
+$command = new LazyCommand(
+   $container,
+   'service',
+   'name',
+   [
+       new InputArgument('argument'),
+   ],
+   'description',
+   'help'
+);
+
+$command->run();
+```
+
+### For existing commands extending Command
+
+```php
+<?php
+
+use Chubbyphp\Lazy\CommandAdapter;
+use Chubbyphp\Lazy\LazyCommand;
+use Symfony\Component\Console\Input\InputArgument;
+
+$container['service'] = function () {
+    return new CommandAdapter(new ExistingCommand());
 };
 
 $command = new LazyCommand(

@@ -4,11 +4,12 @@ namespace Chubbyphp\Tests\Lazy;
 
 use Chubbyphp\Lazy\LazyCommand;
 use Interop\Container\ContainerInterface as InteropContainerInterface;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface as PsrContainerInterface;
-use Symfony\Component\Console\Input\InputInterface as Input;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Output\OutputInterface as Output;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @covers \Chubbyphp\Lazy\LazyCommand
@@ -18,7 +19,7 @@ final class LazyCommandTest extends TestCase
     public function testInvokeInteropt()
     {
         $container = $this->getInteroptContainer([
-            'service' => function (Input $input, Output $output) {
+            'service' => function (InputInterface $input, OutputInterface $output) {
                 return 5;
             },
         ]);
@@ -47,7 +48,7 @@ final class LazyCommandTest extends TestCase
     public function testInvokePsr()
     {
         $container = $this->getPsrContainer([
-            'service' => function (Input $input, Output $output) {
+            'service' => function (InputInterface $input, OutputInterface $output) {
                 return 5;
             },
         ]);
@@ -80,7 +81,7 @@ final class LazyCommandTest extends TestCase
      */
     private function getInteroptContainer(array $services): InteropContainerInterface
     {
-        /** @var InteropContainerInterface|\PHPUnit_Framework_MockObject_MockObject $container */
+        /** @var InteropContainerInterface|MockObject $container */
         $container = $this->getMockBuilder(InteropContainerInterface::class)->setMethods(['get'])->getMockForAbstractClass();
 
         $container
@@ -101,7 +102,7 @@ final class LazyCommandTest extends TestCase
      */
     private function getPsrContainer(array $services): PsrContainerInterface
     {
-        /** @var PsrContainerInterface|\PHPUnit_Framework_MockObject_MockObject $container */
+        /** @var PsrContainerInterface|MockObject $container */
         $container = $this->getMockBuilder(PsrContainerInterface::class)->setMethods(['get'])->getMockForAbstractClass();
 
         $container
@@ -116,18 +117,18 @@ final class LazyCommandTest extends TestCase
     }
 
     /**
-     * @return Input|\PHPUnit_Framework_MockObject_MockObject
+     * @return Input|MockObject
      */
-    private function getInput(): Input
+    private function getInput(): InputInterface
     {
-        return $this->getMockBuilder(Input::class)->setMethods([])->getMockForAbstractClass();
+        return $this->getMockBuilder(InputInterface::class)->setMethods([])->getMockForAbstractClass();
     }
 
     /**
-     * @return Output|\PHPUnit_Framework_MockObject_MockObject
+     * @return Output|MockObject
      */
-    private function getOutput(): Output
+    private function getOutput(): OutputInterface
     {
-        return $this->getMockBuilder(Output::class)->setMethods([])->getMockForAbstractClass();
+        return $this->getMockBuilder(OutputInterface::class)->setMethods([])->getMockForAbstractClass();
     }
 }
