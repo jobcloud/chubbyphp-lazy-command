@@ -1,8 +1,7 @@
 # chubbyphp-lazy-command
 
 [![Build Status](https://api.travis-ci.org/chubbyphp/chubbyphp-lazy-command.png?branch=master)](https://travis-ci.org/chubbyphp/chubbyphp-lazy-command)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chubbyphp/chubbyphp-lazy-command/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chubbyphp/chubbyphp-lazy-command/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/chubbyphp/chubbyphp-lazy-command/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/chubbyphp/chubbyphp-lazy-command/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/chubbyphp/chubbyphp-lazy-command/badge.svg?branch=master)](https://coveralls.io/github/chubbyphp/chubbyphp-lazy-command?branch=master)
 [![Total Downloads](https://poser.pugx.org/chubbyphp/chubbyphp-lazy-command/downloads.png)](https://packagist.org/packages/chubbyphp/chubbyphp-lazy-command)
 [![Monthly Downloads](https://poser.pugx.org/chubbyphp/chubbyphp-lazy-command/d/monthly)](https://packagist.org/packages/chubbyphp/chubbyphp-lazy-command)
 [![Latest Stable Version](https://poser.pugx.org/chubbyphp/chubbyphp-lazy-command/v/stable.png)](https://packagist.org/packages/chubbyphp/chubbyphp-lazy-command)
@@ -14,16 +13,16 @@ Allow to lazyload commands.
 
 ## Requirements
 
- * php: ~7.0
- * psr/container: ~1.0
- * symfony/console: ~2.3|~3.0|~4.0
+ * php: ^7.0
+ * psr/container: ^1.0
+ * symfony/console: ^2.8|^3.4|^4.2|^5.0
 
 ## Installation
 
 Through [Composer](http://getcomposer.org) as [chubbyphp/chubbyphp-lazy-command][1].
 
 ```sh
-composer require chubbyphp/chubbyphp-lazy-command "~1.2"
+composer require chubbyphp/chubbyphp-lazy-command "^1.3"
 ```
 
 ## Usage
@@ -89,4 +88,4 @@ $command->run();
 
 ## Copyright
 
-Dominik Zogg 2016
+Dominik Zogg 2019

@@ -21,14 +21,6 @@ final class LazyCommand extends Command
      */
     private $serviceId;
 
-    /**
-     * @param ContainerInterface $container
-     * @param string             $serviceId
-     * @param string             $name
-     * @param array              $definition
-     * @param string|null        $description
-     * @param string|null        $help
-     */
     public function __construct(
         ContainerInterface $container,
         string $serviceId,
@@ -48,9 +40,6 @@ final class LazyCommand extends Command
     }
 
     /**
-     * @param Input  $input
-     * @param Output $output
-     *
      * @return int|null
      */
     protected function execute(Input $input, Output $output)

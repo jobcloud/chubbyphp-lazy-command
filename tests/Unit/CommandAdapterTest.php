@@ -1,6 +1,8 @@
 <?php
 
-namespace Chubbyphp\Tests\Lazy;
+declare(strict_types=1);
+
+namespace Chubbyphp\Tests\Lazy\Unit;
 
 use Chubbyphp\Lazy\CommandAdapter;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -11,16 +13,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @covers \Chubbyphp\Lazy\CommandAdapter
+ *
+ * @internal
  */
 final class CommandAdapterTest extends TestCase
 {
     public function testExecute()
     {
         $command = new class('command:name') extends Command {
-            /**
-             * @param InputInterface  $input
-             * @param OutputInterface $output
-             */
             protected function execute(InputInterface $input, OutputInterface $output)
             {
                 $output->writeln($input->getArgument('name'));

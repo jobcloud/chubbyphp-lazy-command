@@ -15,18 +15,12 @@ final class CommandAdapter
      */
     private $command;
 
-    /**
-     * @param Command $command
-     */
     public function __construct(Command $command)
     {
         $this->command = $command;
     }
 
     /**
-     * @param InputInterface  $input
-     * @param OutputInterface $output
-     *
      * @return int|null
      */
     public function __invoke(InputInterface $input, OutputInterface $output)

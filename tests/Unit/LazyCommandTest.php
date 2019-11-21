@@ -1,6 +1,8 @@
 <?php
 
-namespace Chubbyphp\Tests\Lazy;
+declare(strict_types=1);
+
+namespace Chubbyphp\Tests\Lazy\Unit;
 
 use Chubbyphp\Lazy\LazyCommand;
 use Interop\Container\ContainerInterface as InteropContainerInterface;
@@ -13,6 +15,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @covers \Chubbyphp\Lazy\LazyCommand
+ *
+ * @internal
  */
 final class LazyCommandTest extends TestCase
 {
@@ -74,11 +78,6 @@ final class LazyCommandTest extends TestCase
         self::assertSame(5, $command->run($input, $output));
     }
 
-    /**
-     * @param array $services
-     *
-     * @return InteropContainerInterface
-     */
     private function getInteroptContainer(array $services): InteropContainerInterface
     {
         /** @var InteropContainerInterface|MockObject $container */
@@ -95,11 +94,6 @@ final class LazyCommandTest extends TestCase
         return $container;
     }
 
-    /**
-     * @param array $services
-     *
-     * @return PsrContainerInterface
-     */
     private function getPsrContainer(array $services): PsrContainerInterface
     {
         /** @var PsrContainerInterface|MockObject $container */
