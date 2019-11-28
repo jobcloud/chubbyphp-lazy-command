@@ -16,9 +16,9 @@
     },
     "require-dev": {
         "container-interop/container-interop": "^1.2",
-        "friendsofphp/php-cs-fixer": "^2.16",
+        "friendsofphp/php-cs-fixer": "^2.16.1",
         "phpunit/phpunit": "^6.5.14|^7.5.17|^8.4.3",
-        "php-coveralls/php-coveralls": "^2.1",
+        "php-coveralls/php-coveralls": "^2.2",
         "phploc/phploc": "^4.0.1||^5.0"
     },
     "autoload": {
