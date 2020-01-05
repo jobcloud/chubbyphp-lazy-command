@@ -88,4 +88,4 @@ $command->run();
 
 ## Copyright
 
-Dominik Zogg 2019
+Dominik Zogg 2020
