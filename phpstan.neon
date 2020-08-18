@@ -1,0 +1,5 @@
+parameters:
+    ignoreErrors:
+        -
+            message: '/Call to protected method execute\(\) of class Symfony\\Component\\Console\\Command\\Command\./'
+            path: %currentWorkingDirectory%/src/CommandAdapter.php

@@ -20,7 +20,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 final class LazyCommandTest extends TestCase
 {
-    public function testInvokeInteropt()
+    public function testInvokeInteropt(): void
     {
         $container = $this->getInteroptContainer([
             'service' => function (InputInterface $input, OutputInterface $output) {
@@ -49,7 +49,7 @@ final class LazyCommandTest extends TestCase
         self::assertSame(5, $command->run($input, $output));
     }
 
-    public function testInvokePsr()
+    public function testInvokePsr(): void
     {
         $container = $this->getPsrContainer([
             'service' => function (InputInterface $input, OutputInterface $output) {

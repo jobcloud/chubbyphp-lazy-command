@@ -6,7 +6,9 @@ namespace Chubbyphp\Lazy;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface as Input;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface as Output;
 
 final class LazyCommand extends Command
@@ -21,6 +23,9 @@ final class LazyCommand extends Command
      */
     private $serviceId;
 
+    /**
+     * @param array<int, InputOption|InputArgument> $definition
+     */
     public function __construct(
         ContainerInterface $container,
         string $serviceId,

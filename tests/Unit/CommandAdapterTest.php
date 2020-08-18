@@ -22,7 +22,7 @@ final class CommandAdapterTest extends TestCase
 {
     use MockByCallsTrait;
 
-    public function testExecute()
+    public function testExecute(): void
     {
         /** @var InputInterface|MockObject $input */
         $input = $this->getMockByCalls(InputInterface::class, [
