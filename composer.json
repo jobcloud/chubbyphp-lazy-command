@@ -1,5 +1,5 @@
 {
-    "name": "chubbyphp/chubbyphp-lazy-command",
+    "name": "jobcloud/chubbyphp-lazy-command",
     "description": "Chubbyphp Lazy Command",
     "keywords": ["chubbyphp", "lazy", "console", "slim"],
     "license": "MIT",
